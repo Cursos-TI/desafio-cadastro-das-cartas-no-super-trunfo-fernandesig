@@ -82,7 +82,7 @@ int main(){
     scanf(" %s", city2);
     printf(" \n");
 
-    printf("Só mais algumas informações agora, %s. Qual a população da cidade? \n", username, city2);
+    printf("Só mais algumas informações agora, %s. Qual a população da cidade? \n", username);
     scanf(" %d", &pop2);
     printf(" \n");
 
