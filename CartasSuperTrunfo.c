@@ -5,12 +5,14 @@ int main(){
     //variáveis da carta1
     char state[30],username[20], cardcode[5], city[30];
     int pop, poi;
-    float area, gdp;
+    float area, gdp,popdensity, gdppercapita;
+     
 
     //variáveis da carta2
     char state2[30], cardcode2[5], city2[30];
     int pop2, poi2;
-    float area2, gdp2;
+    float area2, gdp2,popdensity2, gdppercapita2;
+     
 
     //início do programa
     printf("***************************************** \n");
@@ -44,16 +46,16 @@ int main(){
     printf(" \n");
 
 
-    printf("Só mais algumas informações agora, %s. Qual a população da cidade? \n", username);
+    printf("Só mais algumas informações agora, %s. Qual a população da cidade? \n", username, city);
     scanf(" %d", &pop);
     printf(" \n");
    
 
-    printf("E a área em km²? \n");
+    printf("E a área em km²?(Ex: 101.9) \n");
     scanf(" %f", &area);
     printf(" \n");
 
-    printf("%s, agora preciso do PIB da cidade(em reais): \n", username);
+    printf("%s, agora preciso do PIB da cidade (Ex: 62.9):  \n", username);
     scanf(" %f", &gdp);
     printf(" \n");
 
@@ -80,16 +82,16 @@ int main(){
     scanf(" %s", city2);
     printf(" \n");
 
-    printf("Só mais algumas informações agora, %s. Qual a população da cidade? \n", username);
+    printf("Só mais algumas informações agora, %s. Qual a população da cidade? \n", username, city2);
     scanf(" %d", &pop2);
     printf(" \n");
 
-    printf("E a área em km²? \n");
+    printf("E a área em km²?(Ex: 101.9) \n");
     scanf(" %f", &area2);
     printf(" \n");
 
 
-    printf("%s, agora preciso do PIB da cidade(em reais): \n", username);
+    printf("%s, agora preciso do PIB da cidade (Ex: 62.9):  \n", username);
     scanf(" %f", &gdp2);
     printf(" \n");
 
@@ -98,7 +100,15 @@ int main(){
     scanf(" %d", &poi2);
     printf(" \n");
 
-    
+    //calculo pib per capita e densidade populacional - Carta 1
+    popdensity = pop / area;
+    gdppercapita = (gdp*1000000000) / pop;
+
+    //calculo pib per capita e densidade populacional - Carta 2
+    popdensity2 =  pop2 / area2;
+    gdppercapita2 =  (gdp2*1000000000) / pop2; //Multiplicado por 1.000.000.000 para que o resultado esteja de acordo com o dado inserido pelo usuário.
+
+
 
     printf("Obrigado pelas informações, %s! Aqui temos as cartas cadastradas: \n\n", username);
     printf("********************** \n");
@@ -111,7 +121,11 @@ int main(){
     printf("População: %d \n", pop);
     printf("Área: %.2fkm² \n", area);
     printf("PIB: %.2f bilhões de reais \n", gdp);
-    printf("Número de Pontos Turísticos: %d \n\n", poi);
+    printf("Número de Pontos Turísticos: %d \n", poi);
+    printf("Densidade Populacional: %.2f hab/km²\n",popdensity);
+    printf("PIB per Capita: %.2f reais \n\n", gdppercapita);
+    
+
 
 
     printf("********************** \n");
@@ -125,6 +139,8 @@ int main(){
     printf("Área: %.2fkm² \n", area2);
     printf("PIB: %.2f bilhões de reais \n", gdp2);
     printf("Número de Pontos Turísticos: %d \n", poi2);
+    printf("Densidade Populacional: %.2f hab/km²\n",popdensity2);
+    printf("PIB per Capita: %.2f reais \n\n", gdppercapita2);
 
     return 0;
 }
