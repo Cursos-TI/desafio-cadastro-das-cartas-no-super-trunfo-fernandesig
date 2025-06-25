@@ -46,7 +46,7 @@ int main(){
     printf(" \n");
 
 
-    printf("Só mais algumas informações agora, %s. Qual a população da cidade? \n", username, city);
+    printf("Só mais algumas informações agora, %s. Qual a população da cidade? \n", username);
     scanf(" %d", &pop);
     printf(" \n");
    
